@@ -14,6 +14,7 @@
 		511155F529A8DA650060D8DC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 511155F429A8DA650060D8DC /* Realm */; };
 		511155F729A8DA650060D8DC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 511155F629A8DA650060D8DC /* RealmSwift */; };
 		511155FC29A8DB1B0060D8DC /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511155FB29A8DB1B0060D8DC /* Todo.swift */; };
+		511155FE29A8DBE30060D8DC /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511155FD29A8DBE30060D8DC /* TodoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		511155E929A8D9540060D8DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		511155EC29A8D9540060D8DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		511155FB29A8DB1B0060D8DC /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		511155FD29A8DBE30060D8DC /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		511155FA29A8DA7B0060D8DC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				511155FD29A8DBE30060D8DC /* TodoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				511155FE29A8DBE30060D8DC /* TodoViewModel.swift in Sources */,
 				511155E829A8D9520060D8DC /* ContentView.swift in Sources */,
 				511155FC29A8DB1B0060D8DC /* Todo.swift in Sources */,
 				511155E629A8D9520060D8DC /* Todolist_RealmApp.swift in Sources */,
