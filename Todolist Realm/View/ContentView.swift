@@ -19,7 +19,8 @@ struct ContentView: View {
             }
             
             Button {
-                todoVM.addNewTask(task: "Tes 2")
+                todoVM.addNewTask(task: "Tes 3")
+                todoVM.fetchTask()
             } label: {
                 Text("Add Task")
             }

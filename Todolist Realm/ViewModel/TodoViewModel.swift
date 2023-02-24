@@ -10,29 +10,19 @@ import RealmSwift
 
 class TodoViewModel: ObservableObject {
     private var realm = try? Realm()
+    private var realmService = RealmService()
     @Published var todos: [Todo] = []
     
     func addNewTask(task: String) {
-        guard let realm = realm else { return }
-        
-        do {
-            try realm.write {
-                let newTask = Todo(value: ["task": task])
-                realm.add(newTask)
-                fetchTask()
-            }
-        } catch {
-            print(error)
-        }
+        realmService.addTask(task: task, realm: realm)
     }
     
     func fetchTask() {
-        guard let realm = realm else { return }
-        
-        let todoData = realm.objects(Todo.self)
-        todos = []
-        todoData.forEach { todo in
-            todos.append(todo)
+        realmService.fetchTask(realm: realm) { [weak self] result in
+            self?.todos = []
+            result.forEach { todo in
+                self?.todos.append(todo)
+            }
         }
     }
 }

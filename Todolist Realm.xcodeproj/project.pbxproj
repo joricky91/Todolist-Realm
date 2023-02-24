@@ -15,6 +15,7 @@
 		511155F729A8DA650060D8DC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 511155F629A8DA650060D8DC /* RealmSwift */; };
 		511155FC29A8DB1B0060D8DC /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511155FB29A8DB1B0060D8DC /* Todo.swift */; };
 		511155FE29A8DBE30060D8DC /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511155FD29A8DBE30060D8DC /* TodoViewModel.swift */; };
+		5111560129A8EB290060D8DC /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5111560029A8EB290060D8DC /* RealmService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		511155EC29A8D9540060D8DC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		511155FB29A8DB1B0060D8DC /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		511155FD29A8DBE30060D8DC /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
+		5111560029A8EB290060D8DC /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		511155E429A8D9520060D8DC /* Todolist Realm */ = {
 			isa = PBXGroup;
 			children = (
+				511155FF29A8EB190060D8DC /* Services */,
 				511155F829A8DA6F0060D8DC /* Model */,
 				511155F929A8DA750060D8DC /* View */,
 				511155FA29A8DA7B0060D8DC /* ViewModel */,
@@ -99,6 +102,14 @@
 				511155FD29A8DBE30060D8DC /* TodoViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		511155FF29A8EB190060D8DC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5111560029A8EB290060D8DC /* RealmService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				511155E829A8D9520060D8DC /* ContentView.swift in Sources */,
 				511155FC29A8DB1B0060D8DC /* Todo.swift in Sources */,
 				511155E629A8D9520060D8DC /* Todolist_RealmApp.swift in Sources */,
+				5111560129A8EB290060D8DC /* RealmService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
