@@ -10,6 +10,7 @@ import RealmSwift
 
 class TodoViewModel: ObservableObject {
     private var realm = try? Realm()
+    @Published var todos: [Todo] = []
     
     func addNewTask(task: String) {
         guard let realm = realm else { return }
@@ -18,10 +19,20 @@ class TodoViewModel: ObservableObject {
             try realm.write {
                 let newTask = Todo(value: ["task": task])
                 realm.add(newTask)
-                print("Task added")
+                fetchTask()
             }
         } catch {
             print(error)
+        }
+    }
+    
+    func fetchTask() {
+        guard let realm = realm else { return }
+        
+        let todoData = realm.objects(Todo.self)
+        todos = []
+        todoData.forEach { todo in
+            todos.append(todo)
         }
     }
 }

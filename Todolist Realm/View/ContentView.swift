@@ -12,14 +12,22 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            List {
+                ForEach(todoVM.todos, id: \.id) { todo in
+                    Text(todo.task)
+                }
+            }
+            
             Button {
-                todoVM.addNewTask(task: "Tes")
+                todoVM.addNewTask(task: "Tes 2")
             } label: {
                 Text("Add Task")
             }
-
         }
         .padding()
+        .onAppear {
+            todoVM.fetchTask()
+        }
     }
 }
 
