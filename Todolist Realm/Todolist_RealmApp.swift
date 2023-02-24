@@ -12,6 +12,7 @@ struct Todolist_RealmApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(TodoViewModel())
         }
     }
 }
