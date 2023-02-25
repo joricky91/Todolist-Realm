@@ -10,6 +10,8 @@ import RealmSwift
 
 class RealmService {
     
+    static var shared = RealmService()
+    
     func addTask(task: String, realm: Realm?) {
         guard let realm = realm else { return }
         

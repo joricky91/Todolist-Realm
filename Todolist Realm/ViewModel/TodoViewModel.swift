@@ -10,15 +10,14 @@ import RealmSwift
 
 class TodoViewModel: ObservableObject {
     private var realm = try? Realm()
-    private var realmService = RealmService()
     @Published var todos: [Todo] = []
     
     func addNewTask(task: String) {
-        realmService.addTask(task: task, realm: realm)
+        RealmService.shared.addTask(task: task, realm: realm)
     }
     
     func fetchTask() {
-        realmService.fetchTask(realm: realm) { [weak self] result in
+        RealmService.shared.fetchTask(realm: realm) { [weak self] result in
             self?.todos = []
             
             result.forEach { todo in
@@ -28,6 +27,6 @@ class TodoViewModel: ObservableObject {
     }
     
     func deleteTask(id: ObjectId) {
-        realmService.delete(realm: realm, id: id)
+        RealmService.shared.delete(realm: realm, id: id)
     }
 }
