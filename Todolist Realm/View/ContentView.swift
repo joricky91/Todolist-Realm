@@ -24,6 +24,7 @@ struct ContentView: View {
                         indexSet.forEach { index in
                             let taskTodelete = todoVM.todos[index]
                             todoVM.deleteTask(id: taskTodelete.id)
+                            todoVM.fetchTask()
                         }
                     }
                 }

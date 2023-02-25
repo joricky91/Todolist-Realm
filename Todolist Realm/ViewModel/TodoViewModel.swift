@@ -18,29 +18,16 @@ class TodoViewModel: ObservableObject {
     }
     
     func fetchTask() {
-        guard let realm = realm else { return }
-        
-        let todoData = realm.objects(Todo.self)
-        todos = []
-        todoData.forEach { todo in
-            todos.append(todo)
+        realmService.fetchTask(realm: realm) { [weak self] result in
+            self?.todos = []
+            
+            result.forEach { todo in
+                self?.todos.append(todo)
+            }
         }
     }
     
     func deleteTask(id: ObjectId) {
-        guard let realm = realm else { return }
-        
-        do {
-            let taskToDelete = realm.objects(Todo.self).filter(NSPredicate(format: "id == %@", id))
-            guard !taskToDelete.isEmpty else { return }
-            
-            try realm.write {
-                realm.delete(taskToDelete)
-                fetchTask()
-            }
-            
-        } catch {
-            print("Error deleting, error: \(error)")
-        }
+        realmService.delete(realm: realm, id: id)
     }
 }
