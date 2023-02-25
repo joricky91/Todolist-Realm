@@ -12,26 +12,32 @@ struct ContentView: View {
     @State var isPresented = false
     
     var body: some View {
-        VStack {
-            List {
-                ForEach(todoVM.todos, id: \.id) { todo in
-                    Text(todo.task)
+        NavigationView {
+            VStack {
+                List {
+                    ForEach(todoVM.todos, id: \.id) { todo in
+                        Text(todo.task)
+                    }
                 }
             }
-            
-            Button {
-                isPresented = true
-            } label: {
-                Text("Add Task")
+//            .padding()
+            .navigationTitle("Todo")
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        isPresented = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+            })
+            .onAppear {
+                todoVM.fetchTask()
             }
         }
         .sheet(isPresented: $isPresented, content: {
             AddTaskView()
         })
-        .padding()
-        .onAppear {
-            todoVM.fetchTask()
-        }
     }
 }
 
