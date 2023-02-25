@@ -16,6 +16,7 @@
 		511155FC29A8DB1B0060D8DC /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511155FB29A8DB1B0060D8DC /* Todo.swift */; };
 		511155FE29A8DBE30060D8DC /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511155FD29A8DBE30060D8DC /* TodoViewModel.swift */; };
 		5111560129A8EB290060D8DC /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5111560029A8EB290060D8DC /* RealmService.swift */; };
+		5111560329A9D99A0060D8DC /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5111560229A9D99A0060D8DC /* AddTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		511155FB29A8DB1B0060D8DC /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		511155FD29A8DBE30060D8DC /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		5111560029A8EB290060D8DC /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		5111560229A9D99A0060D8DC /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				511155E729A8D9520060D8DC /* ContentView.swift */,
+				5111560229A9D99A0060D8DC /* AddTaskView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				511155FE29A8DBE30060D8DC /* TodoViewModel.swift in Sources */,
 				511155E829A8D9520060D8DC /* ContentView.swift in Sources */,
 				511155FC29A8DB1B0060D8DC /* Todo.swift in Sources */,
+				5111560329A9D99A0060D8DC /* AddTaskView.swift in Sources */,
 				511155E629A8D9520060D8DC /* Todolist_RealmApp.swift in Sources */,
 				5111560129A8EB290060D8DC /* RealmService.swift in Sources */,
 			);
