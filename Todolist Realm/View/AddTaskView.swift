@@ -17,6 +17,7 @@ struct AddTaskView: View {
             VStack {
                 TextField("Enter task...", text: $task)
                     .padding(.bottom)
+                    .textInputAutocapitalization(.never)
                 
                 Button {
                     todoVM.addNewTask(task: task)
