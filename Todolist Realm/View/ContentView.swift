@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var todoVM: TodoViewModel
+    @State var isPresented = false
     
     var body: some View {
         VStack {
@@ -19,12 +20,14 @@ struct ContentView: View {
             }
             
             Button {
-                todoVM.addNewTask(task: "Tes 3")
-                todoVM.fetchTask()
+                isPresented = true
             } label: {
                 Text("Add Task")
             }
         }
+        .sheet(isPresented: $isPresented, content: {
+            AddTaskView()
+        })
         .padding()
         .onAppear {
             todoVM.fetchTask()
