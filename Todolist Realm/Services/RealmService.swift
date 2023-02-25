@@ -30,4 +30,19 @@ class RealmService {
         completion(todoData)
     }
     
+    func delete(realm: Realm?, id: ObjectId) {
+        guard let realm = realm else { return }
+        
+        do {
+            let taskToDelete = realm.objects(Todo.self).filter("id == %@", id)
+            
+            try realm.write {
+                realm.delete(taskToDelete)
+            }
+            
+        } catch {
+            
+        }
+    }
+    
 }

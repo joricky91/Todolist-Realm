@@ -16,11 +16,18 @@ struct ContentView: View {
             VStack {
                 List {
                     ForEach(todoVM.todos, id: \.id) { todo in
-                        Text(todo.task)
+                        if !todo.isInvalidated {
+                            Text(todo.task)
+                        }
+                    }
+                    .onDelete { indexSet in
+                        indexSet.forEach { index in
+                            let taskTodelete = todoVM.todos[index]
+                            todoVM.deleteTask(id: taskTodelete.id)
+                        }
                     }
                 }
             }
-//            .padding()
             .navigationTitle("Todo")
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarTrailing) {
