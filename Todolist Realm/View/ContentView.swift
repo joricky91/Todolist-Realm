@@ -13,19 +13,17 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                List {
-                    ForEach(todoVM.todos, id: \.id) { todo in
-                        if !todo.isInvalidated {
-                            Text(todo.task)
-                        }
+            List {
+                ForEach(todoVM.todos, id: \.id) { todo in
+                    if !todo.isInvalidated {
+                        Text(todo.task)
                     }
-                    .onDelete { indexSet in
-                        indexSet.forEach { index in
-                            let taskTodelete = todoVM.todos[index]
-                            todoVM.deleteTask(id: taskTodelete.id)
-                            todoVM.fetchTask()
-                        }
+                }
+                .onDelete { indexSet in
+                    indexSet.forEach { index in
+                        let taskTodelete = todoVM.todos[index]
+                        todoVM.deleteTask(id: taskTodelete.id)
+                        todoVM.fetchTask()
                     }
                 }
             }
